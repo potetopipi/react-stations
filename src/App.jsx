@@ -18,10 +18,8 @@ export const App = () => {
       <img src={dogUrl} alt="dog" width={200} />
       <p>かわいい犬の画像です。</p>
       <button
-        onClick={async () => {
-          const res = await fetch('https://dog.ceo/api/breeds/image/random')
-          const data = await res.json()
-          setDogUrl(data.message) 
+        onClick={() => {
+          setDogUrl('https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg')
         }}
       >
         更新
