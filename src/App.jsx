@@ -1,4 +1,5 @@
 // DO NOT DELETE
+
 import { useState } from 'react'
 import './App.css'
 
@@ -7,7 +8,7 @@ import './App.css'
  */
 export const App = () => {
   const [dogUrl, setDogUrl] = useState(
-    'https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg'
+    'https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg',
   )
 
   return (
@@ -17,13 +18,6 @@ export const App = () => {
       </header>
       <img src={dogUrl} alt="dog" width={200} />
       <p>かわいい犬の画像です。</p>
-      <button
-        onClick={() => {
-          setDogUrl('https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg')
-        }}
-      >
-        更新
-      </button>
     </div>
   )
 }
