@@ -1,32 +1,23 @@
-// DO NOT DELETE
 import { useState } from 'react'
+import Header from './Header'
+import Description from './Description'
 import './App.css'
 
-/**
- * @type {() => JSX.Element}
- */
+/** @type {() => JSX.Element} */
 export const App = () => {
-  const [dogUrl, setDogUrl] = useState(
-    'https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg',
-  )
+  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg')
 
+  const fetchDogImage = async () => {
+    const res = await fetch('https://dog.ceo/api/breeds/image/random')
+    const data = await res.json()
+    setDogUrl(data.message)
+  }
   return (
-    <div>
-      <header className="App-header">
-        <h1>Dogアプリ</h1>
-      </header>
-      <img src={dogUrl} alt="dog" width={200} />
-      <p>かわいい犬の画像です。</p>
-      <button
-        className="update-button"
-        onClick={async () => {
-          const res = await fetch('https://dog.ceo/api/breeds/image/random')
-          const data = await res.json()
-          setDogUrl(data.message)
-        }}
-      >
-        更新
-      </button>
-    </div>
+    <>
+      <Header />
+      <Description dogUrl={dogUrl} fetchDogImage={fetchDogImage} />
+    </>
   )
 }
+
+

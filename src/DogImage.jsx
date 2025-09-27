@@ -1,7 +1,8 @@
-// @ts-check
 
-export const DogImage = () => {
-  return <></>
+export const DogImage = ({ imageUrl }) => {
+  return(
+     <img src={imageUrl} alt="Dog" width={200} />
+  );
 }
 
-export default DogImage
+export default DogImage;
