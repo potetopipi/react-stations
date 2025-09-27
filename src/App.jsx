@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './Header'
 import Description from './Description'
 import DogListContainer from './DogListContainer'
+
 import './App.css'
 
 /** @type {() => JSX.Element} */
@@ -18,6 +19,7 @@ export const App = () => {
       <Header />
       <Description dogUrl={dogUrl} fetchDogImage={fetchDogImage} />
       <DogListContainer />
+
     </>
   )
 }
